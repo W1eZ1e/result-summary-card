@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&display=swap');
+
+:root{
+
+    /* primary colors */
+
+    --Light-red: hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+
+    /*  Gradients */
+
+    --top-gradiant : hsl(252, 100%, 67%);
+    --bottom-gradiant : hsl(241, 81%, 54%);
+
+    --Violet-blue-circle: hsla(256, 72%, 46%, 1);
+    --Persian-blue-circle : hsla(241, 72%, 46%, 0);
+
+    /* ### Neutral */
+
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Hanken Grotesk", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.result{
+    width: 320px;
+    height: 408px;
+}
+.result .container{
+    background-image: linear-gradient(var(--top-gradiant), var(--bottom-gradiant));
+    padding: 37px;
+    text-align: center;
+    border-radius: 20px;
+    height: 100%;
+    animation: resultCard 1s ease;
+    
+}
+.result .container h3{
+    color: var(--Light-lavender);
+    margin-bottom: 25px;
+}
+/* score circle styling */
+.score{
+    background-image: linear-gradient(var(--Violet-blue-circle), var(--Persian-blue-circle));
+    border-radius: 50%;
+    width: 170px;
+    height: 170px;
+    padding: 26px;
+    margin-bottom: 25px;
+    display: block;
+    margin: 0 auto;
+}
+.score h1{
+    color: var(--White);
+    font-size: 60px;
+}
+.score h5{
+    color: var(--Light-lavender);
+    font-size: 14px;
+}
+/* end of score circle styling */
+
+
+.result .container .reaction{
+    color: var(--Pale-blue);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+#comment{
+    color: var(--Light-lavender);
+}
+
+
+
+
+
+.summary{
+    width: 50%;
+    height: 408px;
+}
+.summary .container{
+    padding: 37px;
+    text-align: left;
+
+}
+
+.summary .container h2{
+    color: var(--Dark-gray-blue);
+    font-size: 22px;
+    margin-bottom: 25px;
+    animation: summaryTitle 2s ease;
+}
+
+.table{
+    margin-left: 10px;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 12px;
+    
+}
+th img{
+    position: relative;
+    top: 5px;
+    padding-right: 12px;
+}
+th, td{
+    padding-bottom: 33px;
+    position: relative;
+
+}
+th{
+    padding-right: 45px;
+}
+td{
+    color: var(--Dark-gray-blue);
+    font-weight: 800;
+    animation: animate 3s ease;
+    animation-delay: 300ms;
+}
+
+span{
+    color: gray;
+    animation: animate 3s ease;
+    animation-delay: 300ms;
+}
+#reaction{
+    color: var(--Light-red);
+    animation: animate 3s ease;
+}
+#Memory{
+    color: var(--Orangey-yellow);
+    animation: animate 3s ease;
+    animation-delay: 300ms;
+}
+#Verbal{
+    color: var(--Green-teal);
+    animation: animate 3s ease;
+    animation-delay: 500ms;
+}
+#Visual{
+    color: var(--Cobalt-blue);
+    animation: animate 3s ease;
+    animation-delay: 700ms;
+}
+
+.summary .container .bttn{
+    background-color: var(--Dark-gray-blue);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 13px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    position: relative;
+    animation: button 2s 1s ease;
+}
+.bttn:hover{
+    background-image: linear-gradient(var(--top-gradiant), var(--bottom-gradiant));
+    cursor: pointer;
+}
+
+@media (max-width: 500px){
+    .wrapper{
+        flex-direction: column;
+    }
+    .result{
+        height: fit-content;
+    }
+    .score{
+        width: 130px;
+        height: 130px;
+    }
+    .result .container{
+        padding: 30px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        height: 92%;
+    }
+    .summary{
+        width: 100%;
+        height: 350px;
+    }
+    .summary .container{
+        padding: 20px;
+    
+    }
+    .summary .container h2{
+        font-size: 16px;
+    }
+    .table{
+        margin-bottom: 8px;
+        
+    }
+}
+
+
+/* animation  */
+
+@keyframes animate {
+    0%{
+        left: 150px;
+        opacity: 0;
+    }
+    100%{
+        left: 0px;
+        opacity: 1;
+    }
+}
+@keyframes summaryTitle {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes button {
+    0%{
+        top: 100px;
+        opacity: 0;
+    }
+    100%{
+        top: 0px;
+        opacity: 1;
+    }
+}
+@keyframes resultCard {
+    0%{
+        scale: 0%;
+    }
+    100%{
+        scale: 100%;
+    }
+}
